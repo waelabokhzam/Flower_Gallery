@@ -266,7 +266,8 @@ section +.icons .box .text p{
     flex-direction: column;
     justify-content: flex-start;
     align-items:center ;
-    position: relative; 6    cursor: pointer;
+    position: relative;
+    cursor: pointer;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -352,9 +353,25 @@ align-items: center;
 }
 .review .container .box{
   width: 300px;
+  padding: 15px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-
+.review .container .box .stars{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.review .container .box .stars i{
+  padding: 0px 4px;
+  color: gold;
+}
+.review .container .box p{
+  letter-spacing: 1px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+.review .container .box .info{
+  
+}
 
 
 
