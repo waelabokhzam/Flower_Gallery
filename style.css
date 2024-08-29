@@ -235,7 +235,7 @@ section +.icons .box .text p{
 .products {
     padding-top: 70px;
 }
-.products h1 , .review h1{
+.products h1 , .review h1,.contact h1{
     margin: 30px auto;
     text-align: center;
     border-radius: 10px;
@@ -244,7 +244,7 @@ section +.icons .box .text p{
     padding: 10px;
     letter-spacing: 1px;
 }
-.products h1 span,.review h1 span{
+.products h1 span,.review h1 span, .contact h1 span{
     color: var(--pink);
     letter-spacing: 1px;
 }
@@ -342,6 +342,9 @@ align-items: center;
   color: black;
 }
 /* review */
+.review{
+  padding-top: 70px;
+}
 .review .container{
   display: flex;
   align-items: center;
@@ -370,9 +373,77 @@ align-items: center;
   font-size: 17px;
 }
 .review .container .box .info{
-  
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.review .container .box .info .name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.review .container .box .info .image{
+  width: 70px;
+  height: 70px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+.review .container .box .info .image img{
+  width: 100%;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.review .container .box .info:hover img{
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+}
+.review .container .box .info .name .text{
+  margin-left: 20px;
+}
+.review .container .box .info .name .text h2{
+  font-weight: 500;
+}
+.review .container .box .info .name .text p{
+  font-size: 16px;
+}
+.review .container .box .info i{
+  font-size: 40px;
+}
+.contact{
+  padding-top: 60px;
+}
+.contact .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 80%;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0px auto;
+}
+.contact .row form{
+  flex: 1 1 40%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px 15px;
+}
+.contact .row .image{
+  flex: 1 1 40%;
+}
+.contact .row .image img{
+  width: 100%;
+}
 
 
 
