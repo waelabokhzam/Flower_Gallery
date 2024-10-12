@@ -200,7 +200,7 @@ main .container button:hover{
 /* icons */
 
 section + .icons{
-    margin-top: 40px;
+    
     background-color: white;
     display: flex;
     flex-wrap: wrap;
@@ -208,6 +208,8 @@ section + .icons{
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: calc(100% - 50px);
+    margin:40px auto ;
 }
 section +.icons .box{
      background-color: rgb(241, 206, 206);
@@ -490,8 +492,7 @@ align-items: center;
   background: white;
 }
 .contact .row .image{
-  width: 40%;
-  
+    flex: 1 1 40%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -602,9 +603,10 @@ align-items: center;
       order: 2;
     }
     .contact .row .image{
-      width: 75%;
-      height: 100px;
+        max-width: 75%;
+      max-height: 100px;
       order: 1;
+      
     }
 }
 @media (max-width:420px) {
