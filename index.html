@@ -201,18 +201,18 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente pariatur ipsam tempora quos provident
           perspiciatis ex quisquam nisi nam debitis fuga consequatur officia aspernatur, optio esse velit eligendi,
           libero officiis.</p>
-          <div class="info">
-            <div class="name">
-              <div class="image">
-                <img src="./image/janis-dzenis-jkvE9uJN3jk-unsplash.jpg" alt="">
-              </div>
-              <div class="text">
-                <h2>mary</h2>
-                <p>deep</p>
-              </div>
+        <div class="info">
+          <div class="name">
+            <div class="image">
+              <img src="./image/janis-dzenis-jkvE9uJN3jk-unsplash.jpg" alt="">
             </div>
-            <i class="fa-solid fa-quote-right"></i>
+            <div class="text">
+              <h2>mary</h2>
+              <p>deep</p>
+            </div>
           </div>
+          <i class="fa-solid fa-quote-right"></i>
+        </div>
       </div>
       <div class="box">
         <div class="stars">
@@ -225,18 +225,18 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente pariatur ipsam tempora quos provident
           perspiciatis ex quisquam nisi nam debitis fuga consequatur officia aspernatur, optio esse velit eligendi,
           libero officiis.</p>
-          <div class="info">
-            <div class="name">
-              <div class="image">
-                <img src="./image/janis-dzenis-jkvE9uJN3jk-unsplash.jpg" alt="">
-              </div>
-              <div class="text">
-                <h2>mary</h2>
-                <p>deep</p>
-              </div>
+        <div class="info">
+          <div class="name">
+            <div class="image">
+              <img src="./image/janis-dzenis-jkvE9uJN3jk-unsplash.jpg" alt="">
             </div>
-            <i class="fa-solid fa-quote-right"></i>
+            <div class="text">
+              <h2>mary</h2>
+              <p>deep</p>
+            </div>
           </div>
+          <i class="fa-solid fa-quote-right"></i>
+        </div>
       </div>
       <div class="box">
         <div class="stars">
@@ -267,10 +267,23 @@
   <section class="contact" id="contact">
     <h1>contact <span>us</span></h1>
     <div class="row">
-      <form action="" >
-        <input type="text" placeholder="name" class="box" required>
-        <input type="email" placeholder="email" class="box" required>
-        <input type="text" placeholder="number : +--- --------" class="box" required>
+      <form action="" id="form">
+        <div class="field">
+          <input type="text" id="name" class="box" required>
+          <label for="name">Name</label>
+        </div>
+        <div class="field">
+          <input type="email" id="email" class="box" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="field">
+          <input type="number" id="number" class="box" required>
+          <label for="number">Number</label>
+        </div>
+        <div class="field">
+          <input type="text" id="message" class="box" required>
+          <label for="message">Message</label>
+        </div>
         <input type="submit" value="Send Message">
       </form>
       <div class="image">
@@ -278,7 +291,31 @@
       </div>
     </div>
   </section>
-
+  <section class="footer">
+  </section>
 </body>
 
 </html>
+<script>
+  (function(){
+            emailjs.init("sfMCMv4_pNS_0agEC"); // أدخل معرف المستخدم الخاص بك هنا
+        })();
+  var form = document.getElementById("form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const number = document.getElementById("number").value;
+    
+    emailjs.send("service_4becnmq", "template_rxmg2en", {
+      user_name: name,
+      user_email: email,
+      user_number: number
+    })
+    .then(function(res) {
+      alert("success!");
+    }, function(err) {
+      alert("failed!");
+    });
+  });
+</script>
