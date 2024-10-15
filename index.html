@@ -267,24 +267,25 @@
   <section class="contact" id="contact">
     <h1>contact <span>us</span></h1>
     <div class="row">
-      <form onsubmit="event.preventDefault(); sendMessage();" id="form">
+      <form action="" id="form">
         <div class="field">
-          <input type="text" id="name" class="box" name="name" required>
+          <input type="text" id="name" class="box" required>
           <label for="name">Name</label>
         </div>
         <div class="field">
-          <input type="email" id="email" class="box" name="email" required>
+          <input type="email" id="email" class="box" required>
           <label for="email">Email</label>
         </div>
         <div class="field">
-          <input type="number" id="number" class="box" name="number" required>
+          <input type="number" id="number" class="box" required>
           <label for="number">Number</label>
         </div>
         <div class="field">
-          <input type="text" id="message" class="box" name="message" required>
+          <input type="text" id="message" class="box" required>
           <label for="message">Message</label>
         </div>
-        <input type="submit" value="Send Message" style="width: fit-content;">
+        <button type="button" onclick="sendmessage();" style="width: fit-content;">send</button>
+
       </form>
       <div class="image">
         <img src="./image/background.jpg" alt="">
@@ -331,12 +332,12 @@
 
 </html>
 <script>
-        function sendMessage() {
-            const phone = document.getElementById('phone').value;
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=963951993413&text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+  function sendmessage(){
+    var name=document.getElementById('name').value;
+    var email=document.getElementById('email').value;
+    var phone=document.getElementById('number').value;
+    var message=document.getElementById('message').value;
+    var whatsappUrl =`https://wa.me/+963951993413?text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+    window.open(whatsappUrl,'_blank').focus();
+  }
 </script>
