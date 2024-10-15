@@ -278,7 +278,7 @@
         </div>
         <div class="field">
           <input type="number" id="number" class="box" required>
-          <label for="number">Number</label>
+          <label for="number">Phone</label>
         </div>
         <div class="field">
           <input type="text" id="message" class="box" required>
@@ -337,9 +337,12 @@
     var email=document.getElementById('email').value;
     var phone=document.getElementById('number').value;
     var message=document.getElementById('message').value;
-   if(name!=='' && email!=='' && phone!=='' && message!==''){
+   if( name!=="" && phone!=="" && email!=="" && message!==""){
       var whatsappUrl =`https://wa.me/+963951993413?text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
-    window.open(whatsappUrl,'_blank').focus();
+      window.open(whatsappUrl,'_blank').focus();
+    }
+    else{
+     window.alert("Name and Email and Phone and Message Cann't Be Null !!");
     }
   }
 </script>
