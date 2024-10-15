@@ -18,7 +18,7 @@
     <a href="" class="logo">wael <b>&#127802</b></a>
     <nav class="navbar">
       <ul>
-        <li><a href="">home</a></li>
+        <li><a href="#home">home</a></li>
         <li><a href="#about">about</a></li>
         <li><a href="#products">products</a></li>
         <li><a href="#review">review</a></li>
@@ -31,7 +31,7 @@
       <i class="fa fa-user-circle-o"></i>
     </div>
   </header>
-  <main>
+  <main id="home">
     <div class="container">
       <h1>fresh flowers</h1>
       <h3>natural & beautiful flowers</h3>
@@ -267,21 +267,21 @@
   <section class="contact" id="contact">
     <h1>contact <span>us</span></h1>
     <div class="row">
-      <form action="" id="form">
+      <form onsubmit="event.preventDefault(); sendMessage();" id="form">
         <div class="field">
-          <input type="text" id="name" class="box" required>
+          <input type="text" id="name" class="box" name="name" required>
           <label for="name">Name</label>
         </div>
         <div class="field">
-          <input type="email" id="email" class="box" required>
+          <input type="email" id="email" class="box" name="email" required>
           <label for="email">Email</label>
         </div>
         <div class="field">
-          <input type="number" id="number" class="box" required>
+          <input type="number" id="number" class="box" name="number" required>
           <label for="number">Number</label>
         </div>
         <div class="field">
-          <input type="text" id="message" class="box" required>
+          <input type="text" id="message" class="box" name="message" required>
           <label for="message">Message</label>
         </div>
         <input type="submit" value="Send Message" style="width: fit-content;">
@@ -292,40 +292,51 @@
     </div>
   </section>
   <section class="footer">
-      <div class="quick-links">
-        quick links
+      <div class="box">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#products">products</a></li>
+          <li><a href="#review">review</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
       </div>
-      <div class="quick-links">
-        extra links
+      <div class="box ">
+        <h2>Extra Links</h2>
+        <ul>
+          <li><a href="https://github.com/waelabokhzam" target="_blank"><i class="fa-brands fa-github" style="color: #f4c10b;"></i></a></li>
+          <li><a href="https://www.facebook.com/wael.abokhzam" target="_blank"><i class="fa-brands fa-square-facebook" style="color: #055bf0;"></i></a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=9630951993413" target="_blank"><i class="fa-brands fa-square-whatsapp" style="color: #00ff04;"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/wael-h-abo-khzam-b528401b2/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #2c5eb5;"></i></a></li>
+        </ul>
       </div>
-      <div class="location">
-        quick links
+      <div class="box">
+        <h2>location info</h2>
+        <ul>
+          <li>Abu Dhabi - United Arab Emirates</li>
+          <li>baghdad - iraq</li>
+          <li>damascus - syria</li>
+        </ul>
       </div>
-      
+      <div class="box">
+        <h2>contact info</h2>
+        <ul>
+          <li>whatsapp : +9630951993413</li>
+          <li>iraq : +9647770340032</li>
+        </ul>
+      </div>
   </section>
 </body>
 
 </html>
 <script>
-  (function(){
-            emailjs.init("sfMCMv4_pNS_0agEC"); // أدخل معرف المستخدم الخاص بك هنا
-        })();
-  var form = document.getElementById("form");
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const number = document.getElementById("number").value;
-    
-    emailjs.send("service_4becnmq", "template_rxmg2en", {
-      user_name: name,
-      user_email: email,
-      user_number: number
-    })
-    .then(function(res) {
-      alert("success!");
-    }, function(err) {
-      alert("failed!");
-    });
-  });
+        function sendMessage() {
+            const phone = document.getElementById('phone').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=963951993413&text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
 </script>
