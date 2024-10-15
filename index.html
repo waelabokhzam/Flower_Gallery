@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -337,7 +337,9 @@
     var email=document.getElementById('email').value;
     var phone=document.getElementById('number').value;
     var message=document.getElementById('message').value;
-    var whatsappUrl =`https://wa.me/+963951993413?text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+   if(name!=='' && email!=='' && phone!=='' && message!==''){
+      var whatsappUrl =`https://wa.me/+963951993413?text=Phone Number: ${encodeURIComponent(phone)}%0AName:${encodeURIComponent(name)}%0AEmail:${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
     window.open(whatsappUrl,'_blank').focus();
+    }
   }
 </script>
